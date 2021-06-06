@@ -1,0 +1,38 @@
+$theme-bg-colors: (light: #32b3ff,
+  orange: #f9885c,
+  dark: #10743f,
+);
+
+@each $name,
+$color in $theme-bg-colors {
+  @if ($name=="light") {
+    :root {
+      // --#{$name}-color: #{$color};
+      --primary-color: #{$color};
+      --primary-variant: #{saturate($color, 20%)};
+      --secondary-color: #{adjust-hue($color, 20deg)};
+      --on-primary: rgb(250, 250, 250);
+      --on-background: rgb(66, 66, 66);
+      --on-background-alt: rgb(66, 66, 66);
+      --background: rgb(255, 255, 255);
+      --color-text: rgb(250, 250, 250);
+      --color-text-alt: rgb(14, 14, 14);
+      --box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  @else {
+    [data-theme="#{$name}"] {
+      // --#{$name}-color: #{$color};
+      --primary-color: #{$color};
+      --primary-variant: #{saturate($color, 20%)};
+      --secondary-color: #{adjust-hue($color, 20deg)};
+      --on-primary: #000;
+      --on-background: rgb(255, 255, 255);
+      --on-background-alt: rgb(255, 255, 255);
+      --background: #121212;
+      --color-text: rgb(29, 29, 29);
+      --color-text-alt: rgb(255, 255, 255);
+    }
+  }
+}
