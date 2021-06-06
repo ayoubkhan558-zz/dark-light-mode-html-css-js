@@ -18,3 +18,6 @@ The purpose of this project is to implement dark / light theme to a template web
 4. Setting attributes on the root element (html)
 5. Using `document.documentElement`
 6. Saving theme in localStorage
+
+
+[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/web-platform-v9wpo6)
